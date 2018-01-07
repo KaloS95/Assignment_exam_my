@@ -17,10 +17,47 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080; 
 
+var assignments = [];
 
-app.use('/',function(req, res){
-	res.end("hola")
+
+
+
+app.get('/find',function(req, res){
+
+	for (var i = assignments.length - 1; i >= 0; i--) {
+		res.write(JSON.stringify(assignments[i]))
+	}
+	res.end()
 })
+
+
+app.get('/find/:id',function(req, res){
+	var trovo
+	var identif=req.params.id
+	for (var i = assignments.length - 1; i >= 0; i--) {
+		if(assignments[i].assid==identif){
+			trovo=assignments[i]
+		}
+	}
+	res.write(JSON.stringify(trovo))
+	res.end()
+})
+
+
+///ass/:id
+
+app.post('/submit',function(req,res){
+
+	var json = {
+		assid: req.query.assid,
+		//url: req.query.url
+	}
+	assignments.push(json)
+
+	res.end()
+})
+
+app.put('')
 
 
 
