@@ -53,7 +53,7 @@ app.post('/submit',function(req,res){
 		//url: req.query.url
 	}
 	assignments.push(json)
-
+	res.write("ok")
 	res.end()
 })
 
