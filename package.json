@@ -1,0 +1,43 @@
+{
+<<<<<<< HEAD
+  "name": "ap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+
+=======
+  "name": "assignment_exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaloS95/Assignment_Exam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaloS95/Assignment_Exam/issues"
+  },
+  "homepage": "https://github.com/KaloS95/Assignment_Exam#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+>>>>>>> 733ea7c06d17952b68e145ac1c16227811701a58
+}
