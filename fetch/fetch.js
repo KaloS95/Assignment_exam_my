@@ -3,7 +3,7 @@ var fetch = require('node-fetch');
 
 var FormData = require('form-data');
 var form = new FormData();
-form.append('assid', "a1");
+form.append('assid', "prova");
 
 
 fetch("http://localhost:8080/submit", {
@@ -19,5 +19,7 @@ fetch("http://localhost:8080/submit", {
 })
 .then( (response) => { 
    //do something awesome that makes the world a better place
-   console.log(response.body)
-});
+   console.log("post ok")
+})
+.catch(e => {console.log(e)})
+;

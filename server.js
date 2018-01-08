@@ -18,7 +18,6 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080; 
 
 var assignments = [];
-var svuota = []
 
 
 
@@ -46,12 +45,13 @@ app.get('/find/:id',function(req, res){
 
 ///ass/:id
 
-app.post('/submit',function(req,res){
+app.post('/submit',function(req,res){/*
 	var json = {
 		assid: req.body.assid,
 		//url: req.query.url
-	}
-	assignments.push(json)
+	}*/
+	jsonReceived=JSON.parse(JSON.stringify(req.body))
+	assignments.push(jsonReceived)
 	res.write("ok")
 	res.end()
 })
