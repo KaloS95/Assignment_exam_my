@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080; 
 
 var assignments = [];
-
+var svuota = []
 
 
 
@@ -47,9 +47,8 @@ app.get('/find/:id',function(req, res){
 ///ass/:id
 
 app.post('/submit',function(req,res){
-
 	var json = {
-		assid: req.query.assid,
+		assid: req.body.assid,
 		//url: req.query.url
 	}
 	assignments.push(json)
@@ -57,13 +56,36 @@ app.post('/submit',function(req,res){
 	res.end()
 })
 
-app.put('')
+app.put('/modify/:id', function(req,res){
+	var trovo
+	var identif=req.params.id
+	for (var i = assignments.length - 1; i >= 0; i--) {
+		if(assignments[i].assid==identif){
+			trovo=assignments[i]
+		}
+	}
+	//aggiorna campi...come dovrei fare?
+	
+	var newparameters=req.body
+	trovo=newparameters
+	trovo.assid=identif
+	assignments.push(trovo)
+	res.write(trovo)
+	res.end("moifica fatta")
+})
 
 
-
-
-
-
+app.delete('/delete',function(req, res){
+	
+	assignments=svuota
+	res.write(assignments)
+	res.end()
+})
+/*
+app.delete('/delete/:id',function(req, res){
+	
+})
+*/
 
 
 
