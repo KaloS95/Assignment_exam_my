@@ -77,8 +77,8 @@ app.put('/modify/:id', function(req,res){
 
 app.delete('/delete',function(req, res){
 	
-	assignments=svuota
-	res.write(assignments)
+	assignments.splice(0)
+	res.write(JSON.stringify(assignments))
 	res.end()
 })
 /*
